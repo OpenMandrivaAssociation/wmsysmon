@@ -13,7 +13,7 @@ Source1:	%{name}-icons.tar.bz2
 Patch0:		mkfile.patch.bz2
 Patch1:         wmsysmon-0.7.6-s4t4n.patch.bz2
 URL:		http://www.gnugeneration.com/software/wmsysmon/src/
-BuildRequires:	XFree86-devel
+BuildRequires:	X11-devel
 BuildRequires:	xpm-devel
 Prefix:		/usr/X11R6
 BuildRoot:	%{_tmppath}/%{name}-buildroot
