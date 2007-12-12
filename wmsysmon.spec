@@ -1,5 +1,5 @@
 %define version 0.7.6
-%define release 4mdk
+%define release %mkrel 4
 %define name wmsysmon
 
 Summary:	System information (memory, swap, uptime, IO) in a small dock app.
