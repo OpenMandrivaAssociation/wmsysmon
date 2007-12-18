@@ -1,5 +1,5 @@
-%define version 0.7.6
-%define release %mkrel 4
+%define version 0.7.7
+%define release %mkrel 1
 %define name wmsysmon
 
 Summary:	System information (memory, swap, uptime, IO) in a small dock app.
@@ -10,8 +10,9 @@ License:	GPL
 Group:		Toys
 Source0:	%{name}-%{version}.tar.bz2
 Source1:	%{name}-icons.tar.bz2
-Patch0:		mkfile.patch.bz2
-Patch1:         wmsysmon-0.7.6-s4t4n.patch.bz2
+Patch0:         01-break.dpatch
+Patch1:         02-output.dpatch
+Patch2:         03-src_makefile.dpatch
 URL:		http://www.gnugeneration.com/software/wmsysmon/src/
 BuildRequires:	X11-devel
 BuildRequires:	xpm-devel
@@ -26,9 +27,10 @@ development.
 
 %prep
 
-%setup -q
-%patch0
+%setup -q -n %{name}-%{version}
+%patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 make -C src
@@ -70,7 +72,7 @@ EOF
 
 %files
 %defattr (-,root,root)
-%doc ChangeLog  FAQ  README
+%doc ChangeLog README
 %{prefix}/bin/%{name}
 %{_liconsdir}/%{name}.xpm
 %{_miconsdir}/%{name}.xpm
