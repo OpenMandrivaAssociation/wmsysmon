@@ -48,12 +48,15 @@ tar xOjf %SOURCE1 %{name}.48x48.xpm > $RPM_BUILD_ROOT%{_liconsdir}/%{name}.xpm
 mkdir -p $RPM_BUILD_ROOT%{prefix}/bin/
 install -m 755 src/wmsysmon $RPM_BUILD_ROOT%{prefix}/bin/
 
-install -m 755 -d $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}):command="%{prefix}/bin/%{name}" icon="%{name}.xpm"\\
-                 needs="X11" section="Applications/Monitoring" title="WmSysMon"\\
-                 longtitle="System information (memory, swap, uptime, IO) in a small icon"\\
-                 xdg="true" \\
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=%{prefix}/bin/%{name}
+Icon=%{name}.xpm
+Categories=System;Monitor;
+Name=WmSysMon
+Comment=System information (memory, swap, uptime, IO) in a small icon
 EOF
 
 
@@ -78,5 +81,5 @@ EOF
 %{_liconsdir}/%{name}.xpm
 %{_miconsdir}/%{name}.xpm
 %{_iconsdir}/%{name}.xpm
-%{_menudir}/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 
