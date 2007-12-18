@@ -53,6 +53,7 @@ cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
 ?package(%{name}):command="%{prefix}/bin/%{name}" icon="%{name}.xpm"\\
                  needs="X11" section="Applications/Monitoring" title="WmSysMon"\\
                  longtitle="System information (memory, swap, uptime, IO) in a small icon"\\
+                 xdg="true" \\
 EOF
 
 
