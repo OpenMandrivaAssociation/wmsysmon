@@ -17,6 +17,7 @@ URL:		http://www.gnugeneration.com/software/wmsysmon/src/
 BuildRequires:	X11-devel
 BuildRequires:	xpm-devel
 Prefix:		/usr/X11R6
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 This is a small dock application for use with WindowMaker (www.windowmaker.org)
