@@ -2,7 +2,7 @@
 %define release %mkrel 2
 %define name wmsysmon
 
-Summary:	System information (memory, swap, uptime, IO) in a small dock app.
+Summary:	System information (memory, swap, uptime, IO) in a small dock app
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
