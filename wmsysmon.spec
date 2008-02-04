@@ -54,7 +54,7 @@ cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
 [Desktop Entry]
 Type=Application
 Exec=%{prefix}/bin/%{name}
-Icon=%{name}.xpm
+Icon=%{name}
 Categories=System;Monitor;
 Name=WmSysMon
 Comment=System information (memory, swap, uptime, IO) in a small icon
