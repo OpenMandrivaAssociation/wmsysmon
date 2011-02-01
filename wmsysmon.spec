@@ -1,5 +1,5 @@
 %define version 0.7.7
-%define release %mkrel 6
+%define release %mkrel 7
 %define name wmsysmon
 
 Summary:	System information (memory, swap, uptime, IO) in a small dock app
@@ -14,9 +14,9 @@ Patch0:         01-break.dpatch
 Patch1:         02-output.dpatch
 Patch2:         03-src_makefile.dpatch
 URL:		http://www.gnugeneration.com/software/wmsysmon/src/
-BuildRequires:	X11-devel
-BuildRequires:	xpm-devel
-Prefix:		/usr/X11R6
+BuildRequires:	libx11-devel
+BuildRequires:	libxext-devel
+BuildRequires:	libxpm-devel
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
@@ -34,7 +34,7 @@ development.
 %patch2 -p1
 
 %build
-make -C src
+make -C src CC="gcc %optflags %ldflags"
 
 %install
 [ -d $RPM_BUILD_ROOT ] && rm -rf $RPM_BUILD_ROOT
@@ -46,14 +46,14 @@ tar xOjf %SOURCE1 %{name}.16x16.xpm > $RPM_BUILD_ROOT%{_miconsdir}/%{name}.xpm
 tar xOjf %SOURCE1 %{name}.32x32.xpm > $RPM_BUILD_ROOT%{_iconsdir}/%{name}.xpm
 tar xOjf %SOURCE1 %{name}.48x48.xpm > $RPM_BUILD_ROOT%{_liconsdir}/%{name}.xpm
 
-mkdir -p $RPM_BUILD_ROOT%{prefix}/bin/
-install -m 755 src/wmsysmon $RPM_BUILD_ROOT%{prefix}/bin/
+mkdir -p $RPM_BUILD_ROOT%{_bindir}
+install -m 755 src/wmsysmon $RPM_BUILD_ROOT%{_bindir}
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
 [Desktop Entry]
 Type=Application
-Exec=%{prefix}/bin/%{name}
+Exec=%{_bindir}/%{name}
 Icon=%{name}
 Categories=System;Monitor;
 Name=WmSysMon
@@ -78,11 +78,10 @@ EOF
 %{clean_menus}
 %endif
 
-
 %files
 %defattr (-,root,root)
 %doc ChangeLog README
-%{prefix}/bin/%{name}
+%{_bindir}/%{name}
 %{_liconsdir}/%{name}.xpm
 %{_miconsdir}/%{name}.xpm
 %{_iconsdir}/%{name}.xpm
