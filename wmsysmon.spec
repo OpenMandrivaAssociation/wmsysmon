@@ -87,3 +87,65 @@ EOF
 %{_iconsdir}/%{name}.xpm
 %{_datadir}/applications/mandriva-%{name}.desktop
 
+
+
+%changelog
+* Tue Feb 01 2011 Funda Wang <fwang@mandriva.org> 0.7.7-7mdv2011.0
++ Revision: 634836
+- tighten BR
+
+* Wed Sep 09 2009 Thierry Vignaud <tv@mandriva.org> 0.7.7-6mdv2010.0
++ Revision: 434918
+- rebuild
+
+* Sun Aug 03 2008 Thierry Vignaud <tv@mandriva.org> 0.7.7-5mdv2009.0
++ Revision: 262093
+- rebuild
+
+* Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 0.7.7-4mdv2009.0
++ Revision: 256266
+- rebuild
+- fix 'error: for key "Icon" in group "Desktop Entry" is an icon name with an
+  extension, but there should be no extension as described in the Icon Theme
+  Specification if the value is not an absolute path'
+- fix summary-ended-with-dot
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Tue Dec 18 2007 Thierry Vignaud <tv@mandriva.org> 0.7.7-2mdv2008.1
++ Revision: 132230
+- auto-convert XDG menu entry
+
+* Tue Dec 18 2007 JÃ©rÃ´me Soyer <saispo@mandriva.org> 0.7.7-1mdv2008.1
++ Revision: 132082
+- Add xdg
+- Add Debian patches and bump release
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+    - buildrequires X11-devel instead of XFree86-devel
+    - use %%mkrel
+    - import wmsysmon
+
+
+
+* Sun Aug 15 2004 Michael Scherer <misc@mandrake.org> 0.7.6-4mdk 
+- from Jean-Noel Avila <avila@nerim.net>
+  - add s4t4n patch for 2.6 kernel series
+
+* Sun Dec 07 2003 Franck Villaume <fvill@freesurf.fr> 0.7.6-3mdk
+- add real support to RPM_OPT_FLAGS
+- add BuildRequires : xpm-devel
+
+* Thu Jun 12 2003 Marcel Pol <mpol@gmx.net> 0.7.6-2mdk
+- rebuild for rpm 4.2
+
+* Thu May 31 2001 HA Quôc-Viêt <viet@mandrakesoft.com> 0.7.6-1mdk
+- Anecdotical fixes in the spec. fix to the menu file.
+
+* Wed Oct 31 2000 HA Quôc-Viêt <viet@mandrakesoft.com> 0.7.6-0mdk
+- Initial release.
