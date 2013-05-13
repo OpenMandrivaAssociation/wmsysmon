@@ -1,5 +1,5 @@
 %define version 0.7.7
-%define release %mkrel 7
+%define release  8
 %define name wmsysmon
 
 Summary:	System information (memory, swap, uptime, IO) in a small dock app
@@ -17,7 +17,6 @@ URL:		http://www.gnugeneration.com/software/wmsysmon/src/
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xpm)
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 This is a small dock application for use with WindowMaker (www.windowmaker.org)
