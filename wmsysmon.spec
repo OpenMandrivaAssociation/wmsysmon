@@ -14,9 +14,9 @@ Patch0:         01-break.dpatch
 Patch1:         02-output.dpatch
 Patch2:         03-src_makefile.dpatch
 URL:		http://www.gnugeneration.com/software/wmsysmon/src/
-BuildRequires:	libx11-devel
-BuildRequires:	libxext-devel
-BuildRequires:	libxpm-devel
+BuildRequires:	pkgconfig(x11)
+BuildRequires:	pkgconfig(xext)
+BuildRequires:	pkgconfig(xpm)
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
