@@ -1,5 +1,5 @@
 %define version 0.7.7
-%define release  8
+%define release  9
 %define name wmsysmon
 
 Summary:	System information (memory, swap, uptime, IO) in a small dock app
