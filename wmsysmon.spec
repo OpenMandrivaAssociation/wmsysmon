@@ -13,7 +13,7 @@ Source1:	%{name}-icons.tar.bz2
 Patch0:         01-break.dpatch
 Patch1:         02-output.dpatch
 Patch2:         03-src_makefile.dpatch
-URL:		http://www.gnugeneration.com/software/wmsysmon/src/
+URL:		https://www.gnugeneration.com/software/wmsysmon/src/
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xpm)
