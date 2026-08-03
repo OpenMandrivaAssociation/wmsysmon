@@ -1,4 +1,4 @@
-%define version 0.7.7
+%define version 0.8.1
 %define release  9
 %define name wmsysmon
 
@@ -10,11 +10,12 @@ License:	GPL
 Group:		Toys
 Source0:	%{name}-%{version}.tar.bz2
 Source1:	%{name}-icons.tar.bz2
-Patch0:         01-break.dpatch
-Patch1:         02-output.dpatch
-Patch2:         03-src_makefile.dpatch
-URL:		https://www.gnugeneration.com/software/wmsysmon/src/
+Patch0:		01-break.dpatch
+Patch1:		02-output.dpatch
+Patch2:		03-src_makefile.dpatch
+URL:		https://github.com/voyageur/wmsysmon
 BuildRequires:	make
+BuildRequires:	pkgconfig(dockapp)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xpm)
@@ -27,11 +28,7 @@ development.
 
 
 %prep
-
-%setup -q -n %{name}-%{version}
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
+%autosetup -p1 -n %{name}-%{version}
 
 %build
 make -C src CC="gcc %optflags %ldflags"
@@ -144,8 +141,8 @@ EOF
 * Thu Jun 12 2003 Marcel Pol <mpol@gmx.net> 0.7.6-2mdk
 - rebuild for rpm 4.2
 
-* Thu May 31 2001 HA Quôc-Viêt <viet@mandrakesoft.com> 0.7.6-1mdk
+* Thu May 31 2001 HA Quï¿½c-Viï¿½t <viet@mandrakesoft.com> 0.7.6-1mdk
 - Anecdotical fixes in the spec. fix to the menu file.
 
-* Wed Oct 31 2000 HA Quôc-Viêt <viet@mandrakesoft.com> 0.7.6-0mdk
+* Wed Oct 31 2000 HA Quï¿½c-Viï¿½t <viet@mandrakesoft.com> 0.7.6-0mdk
 - Initial release.
